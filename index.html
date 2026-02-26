@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Sign Up</title>
+    <title>Sign Up | Join Us</title>
     <link rel="stylesheet" href="style.css">
-   
 </head>
 <body>
+    <div class="signup-container">
+        <form class="signup-form">
+            <h2>Create Account</h2>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email@example.com" required>
+            </div>
 
-<div class="container">
-    <div id="login-form">
-        <h2>Welcome Back</h2>
-        <form>
-            <div class="form-group">
-                <input type="email" placeholder="Email Address" required>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="At least 8 characters" required>
             </div>
-            <div class="form-group">
-                <input type="password" placeholder="Password" required>
-            </div>
-            <button type="submit">Login</button>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+            
+            <p class="footer-text">
+                Already have an account? <a href="#">Log In</a>
+            </p>
         </form>
-     
     </div>
-
-
-
-
-
 </body>
 </html>
