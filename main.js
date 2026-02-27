@@ -9,7 +9,7 @@ console.log("Firebase script is connected!");
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyBSAop_oP2RsxM4iGv9NtsVq46Wo-KRS-A",
+    apiKey: process.env.API_KEY,
     authDomain: "fir-login-signup-wma.firebaseapp.com",
     projectId: "fir-login-signup-wma",
     storageBucket: "fir-login-signup-wma.firebasestorage.app",
