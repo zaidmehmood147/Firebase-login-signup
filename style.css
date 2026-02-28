@@ -91,3 +91,37 @@ p {
 .footer-text a:hover {
     text-decoration: underline;
 }
+.google-btn {
+    width: 100%;
+    padding: 0.7rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.google-btn:hover { background: #f9f9f9; }
+.google-btn img { width: 18px; }
+
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #aaa;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider span { padding: 0 10px; font-size: 0.8rem; }
