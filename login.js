@@ -2,7 +2,10 @@ console.log("Firebase script is connected!");
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+  import { getAuth, signInWithEmailAndPassword ,
+    GoogleAuthProvider ,
+    signInWithPopup
+  } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,7 +25,8 @@ console.log("Firebase script is connected!");
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-  
+  var googlebtn = document.getElementById("google");
+  googlebtn.addEventListener("click" , google)
   var submit = document.getElementById('btn') ; 
 
   submit.addEventListener("click" , function(event){
@@ -45,3 +49,24 @@ signInWithEmailAndPassword(auth, email, password)
     // ..
   });
   })
+
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+
+function google() {
+signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+   window.location.href = "result.html"
+    console.log("google user =>" , user.providerData[0].displayName)
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    const email = error.customData.email;
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+    alert(errorMessage)
+  });
+}
