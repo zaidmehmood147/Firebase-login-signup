@@ -70,3 +70,5 @@ signInWithPopup(auth, provider)
     alert(errorMessage)
   });
 }
+
+// the logic isnt logicing
